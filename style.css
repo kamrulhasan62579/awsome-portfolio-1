@@ -9,7 +9,7 @@
     width: 100%;
     background-color: rgb(238, 4, 199);
     padding: 12px 0;
-    /* position: sticky; */
+    position: fixed;
     z-index: 999;
 }
 .menu-btn {
