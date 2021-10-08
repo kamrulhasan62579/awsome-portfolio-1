@@ -1,0 +1,504 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+/* nav styling */
+.navbar-bg{
+    width: 100%;
+    background-color: rgb(238, 4, 199);
+    padding: 30px 0;
+    position: fixed;
+    z-index: 999;
+}
+.menu-btn {
+  color: #fff;
+  font-size: 23px;
+  cursor: pointer;
+  display: none;
+}
+.navbar li a{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: sans-serif;
+    transition: color 0.5s ease;
+
+}
+.navbar li a:hover{
+    color: rgb(255, 254, 254);
+    background: white;
+    transition: all 0.6s;
+    -webkit-transition: all 0.6s;
+    -moz-transition: all 0.6s;
+    -ms-transition: all 0.6s;
+    -o-transition: all 0.6s;
+    padding-left: 10px;
+}
+.navbar .logo {
+    color: rgb(96, 3, 247);
+    font-size: 35px;
+    font-weight: 600;
+    font-family: sans-serif;
+}
+.navbar li {
+    display: inline-block;
+    margin-left: 25px;
+}
+.max-width .logo span{
+    color: orange;
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+ /*responsive mediaquery start*/
+ 
+ @media(min-width: 1140px){
+    .about .about-content .left img{
+        height: 500px;
+        width: 400px;
+    }
+    .max-width{
+        max-width: 1300px;
+        padding: 0 80px;
+        margin: auto;
+    }
+    .about .about-content{
+        grid-template-columns: repeat(2, 45% 55%);
+        align-items: center;
+        justify-content: space-between;
+    }
+    .serv-content{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 30px;
+    }
+    .skill-content, .contact-content{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px;
+    } 
+    .teams{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 30px;
+    }
+ }
+ @media(min-width: 970px){
+    .about .about-content{
+        grid-template-columns: repeat(2, 45% 55%);
+        align-items: center;
+        justify-content: space-between;
+    }
+    .max-width{
+        max-width: 1400px;
+        padding: 0 60px;
+        margin: auto;
+    }
+    .about .about-content .left img{
+        height: 500px;
+        width: 400px;
+    }
+    .serv-content{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 30px;
+    }
+    .skill-content, .contact-content{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px;
+    }
+ }
+ @media(min-width: 500px){
+    .about .about-content{
+        grid-template-columns: repeat(1);
+        text-align: center;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+    .max-width{
+        max-width: 1431px;
+        padding: 0 50px;
+        margin: auto;
+    }
+    .about .about-content .left img{
+        height: 450px;
+        width: 350px;
+    }
+    .serv-content, .skill-content{
+        display: grid;
+        grid-template-columns: repeat(1);
+        grid-gap: 30px;
+    }
+    .teams, .contact-content{
+        display: grid;
+        grid-template-columns: repeat(1);
+        grid-gap: 30px;
+    }
+ }
+
+ /* media query by max width */
+ @media(max-width: 1550px){
+    .count .num{
+        font-size: 100px;
+    }
+    .count .txt{
+        font-size: 30px;
+    }
+    .count{
+        margin: 50px;
+    }
+}
+ @media(max-width: 1200px){
+    .count .num{
+        font-size: 40px;
+    }
+    .count .txt{
+        font-size: 30px;
+    }
+    .count{
+        margin: 30px;
+    }
+}
+ @media(max-width: 550px){
+    .count .num{
+        font-size: 40px;
+    }
+    .count .txt{
+        font-size: 15px;
+    }
+    .count{
+        margin: 10px;
+    }
+ }
+/* home section styling */
+.home{
+    display: flex;
+    background: url("images/Man-Made-Road-Background-For-Free-.jpg");
+    height: 100vh;
+    color: #fff;
+    min-height: 500px;
+    font-family: sans-serif;
+}
+.home .max-width{
+    margin: auto 0 auto 40px;
+}
+.home .home-content .text-1{
+    font-size: 27px;
+}
+/* common styling  */
+.about, .serv, .skill, .team, .contact, .footer, .duration-section{
+    font-family: sans-serif;
+}
+section{
+    padding: 100px 0;
+}
+section .title{
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    padding-bottom: 20px;
+    margin-bottom: 60px;
+}
+section .title::before{
+    position:absolute;
+    content: "";
+    left: 50%;
+    bottom: 0;
+    background: #111111;
+    height: 3px;
+    width: 240px;
+    transform: translateX(-50%);
+
+}
+section .title::after{
+    position:absolute;
+    padding: 5px;
+    left: 50%;
+    bottom: -14px;
+    font-size: 20px;
+    color: crimson;
+    background: #fff;
+    transform: translateX(-50%);
+
+}
+.home .home-content a, .about .right a, .skill a, .icons a{
+    background-color: crimson;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 26px;   
+    border: 3px solid crimson;
+    transition: all 0.5s ease-in;
+}
+.skill a:hover, .icons a:hover{
+    text-decoration: none;
+    background: none;
+    color: crimson;
+}
+.home .home-content a:hover{
+    background: none;
+}
+.about .about-content a:hover{
+    background: none;
+    color: crimson;
+}
+.home .home-content .text-2{
+    font-size: 75px;
+    font-weight: 600px;
+}
+.home .home-content .text-3{
+    font-size: 40px;
+}
+.home .home-content .text-3 span{
+  color: rgb(255, 7, 57);
+  font-weight: 600;
+}
+/* duration section styling */
+.duration-text{
+    font-size: 30px;
+    color: #fff;
+}
+.duration-section{
+    background: #111;
+    color: #fff;
+    text-align: center;
+}
+.duration{
+    display: flex;
+    justify-content: center;
+}
+.duration-section .title::after{
+    background: #111;
+    content: "Mission starts from";
+}
+.duration-section .title::before{
+    background: #fff;
+}
+.count{
+    font-weight: 700;    
+}
+.count .txt{
+    color:rgb(255, 106, 0);
+}
+.count .num{
+    color: rgb(255, 0, 255);
+}
+/* about section styling */
+.about .about-content{
+    display: grid;
+}
+.about .title::after{
+    background: #fff;
+    content: "Who i am";
+}
+
+.about .about-content .left img{
+    /* border: 2px solid crimson; */
+    /* background: linear-gradient(45deg, grey, rgb(196, 190, 190)); */
+    background:radial-gradient(rgb(150, 150, 150), rgb(17, 224, 231));
+    border-radius: 2%;
+    object-fit: cover;
+}
+.about .about-content .right p{
+    text-align: justify;
+}
+.about .about-content .right .text{
+    font-size: 25px;
+    font-weight: 600;
+}
+/* service section start */
+.serv .title::after{
+    background: #111;
+    content: "What i provide";
+}
+.serv .title::before{
+    background: #fff;
+}
+.serv, .team{
+    background: #111;
+    color: #fff;
+}
+.serv .serv-content .card{
+    background: #444;
+    text-align: center;
+    border-radius: 6px;
+    padding: 45px 25px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.serv .serv-content .card i{
+    font-size: 50px;
+    color: crimson;
+}
+.serv .serv-content .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+.serv .serv-content .card:hover{
+    background: crimson;
+    transform: scale(1.05);
+}
+
+.serv .serv-content .card:hover i{
+    color: #fff;
+    transition: color 0.5s ease;
+}
+/* skill section styling */
+.skill .title::after{
+    content: "What i know";
+}
+.skill .skill-content .info{
+    display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 10px;
+}
+.skill .skill-content .text{
+   font-size: 25px;
+   font-weight: 600;
+   margin-bottom: 10px;
+}
+.skill .skill-content .right span{
+    font-size: 18px;
+    font-weight: 600;
+}
+.skill .skill-content .right .line{
+    height: 10px;
+    width: 100%;
+    background: lightgray;
+    position: relative;
+}
+.skill .skill-content .right .line::before{
+    position:absolute;
+    height: 100%;
+    content: "";
+    background: rgb(221, 255, 1);
+}
+.skill .skill-content .right .html::before{
+    width: 90%;
+}
+.skill .skill-content .right .css::before{
+    width: 80%;
+}
+.skill .skill-content .right .bootstrap::before{
+    width: 85%;
+}
+.skill .skill-content .right .js::before{
+    width: 70%;
+}
+.skill .skill-content .right .react::before{
+    width: 75%;
+}
+.skill .skill-content .left p{
+    text-align: justify;
+}
+/* teams section stylung*/
+.team .title::after{
+    content: "Who with me";
+}
+.team .title::after{
+   background: #111;
+}
+.team .title::before{
+    background: #fff;
+}
+.team .team-content .card img{
+    border: 3px solid crimson;
+    border-radius: 50%;
+    object-fit: cover;
+    height: 300px;
+    width: 250px;
+}
+.team .team-content .card:hover img{
+    transform: scale(1.05);
+    transition: all 0.7s;
+}
+.team .team-content .card {
+    background: #444;
+    padding: 20px;
+    border-radius: 6px;
+    text-align: center;
+    transition: all 0.9s ease-in-out;
+}
+.team .team-content .card:hover{
+    background: crimson;
+    transition: all 0.8s;
+}
+.team .team-content .card:hover img{
+    border-color: yellow;
+}
+.team .team-content .card:hover .box{
+    transform: scale(1.05);
+}
+/* contact section styling */
+.contact .title::after{
+    content: "Get in touch";
+}
+.contact .contact-content .row{
+    display: flex;
+    align-items: center;
+}
+.contact .contact-content .row .head{
+    font-weight: 600;
+}
+.contact .contact-content .row{
+    margin-top: 20px;
+}
+.contact .contact-content .row i{
+    margin-right: 20px;
+    font-size: 29px;
+    color: crimson;
+}
+.contact .contact-content .text{
+    font-size: 20px;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+.contact .contact-content .left p{
+    text-align: justify;
+}
+.contact .contact-content .name{
+    width: 49%;
+    height: 35px;
+    background: blanchedalmond;
+    border-radius: 3px;
+}
+.contact .contact-content .subject{
+    width: 99%;
+    height: 40px;
+    background: blanchedalmond;
+    border-radius: 3px;
+
+}
+.contact .contact-content .description{
+    width: 99%;
+    height: 80px;
+    background: blanchedalmond;
+    border-radius: 3px;
+
+}
+/* footer section styling */
+.footer{
+    background: #111;
+    text-align: center;
+}
+.footer span{
+    color: #fff;
+}
+.footer a{
+    color: crimson;
+}
+.footer a:hover{
+    text-decoration: underline;
+}
+.contact .column ::placeholder{
+   padding: 10px;
+}
