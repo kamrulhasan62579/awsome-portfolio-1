@@ -1,24 +1,24 @@
-*{
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;1,500&display=swap");
+* {
     margin: 0;
     padding: 0;
     text-decoration: none;
     box-sizing: border-box;
 }
 /* nav styling */
-.navbar-bg{
+.navbar-bg {
     width: 100%;
-    background-color: rgb(238, 4, 199);
-    padding: 12px 0;
-    position: fixed;
+    background: blanchedalmond;
+    padding: 5px 0;
     z-index: 999;
 }
 .menu-btn {
-  color: #fff;
-  font-size: 23px;
-  cursor: pointer;
-  display: none;
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
 }
-.navbar li a{
+.navbar li a {
     color: #fff;
     font-size: 20px;
     font-weight: 500;
@@ -26,7 +26,7 @@
     transition: color 0.5s ease;
 
 }
-.navbar li a:hover{
+.navbar li a:hover {
     color: rgb(255, 254, 254);
     background: white;
     transition: all 0.6s;
@@ -46,167 +46,509 @@
     display: inline-block;
     margin-left: 25px;
 }
-.max-width .logo span{
+.max-width .logo span {
     color: orange;
 }
-.navbar .max-width{
+.navbar .max-width {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
- /*responsive mediaquery start*/
- 
- @media(min-width: 1140px){
-    .about .about-content .left img{
+/* for text-animation */
+.text-animation-body {
+  font-family: "Raleway", sans-serif;
+  /* padding: 1em 2em; */
+  font-size: 18px;
+  color: #aaa;
+}
+
+.h1-animation {
+  font-weight: 700;
+  z-index: 999;
+  color: yellow;
+}
+.txt-rotate{
+  color: red;
+}
+.full-text-body{
+    padding-left: 20px;
+    padding-top: 20px;
+}
+.h1-of-animation{
+    color: rgb(255, 0, 255);
+    font-weight: 600;
+    font-size: 40px;
+    z-index: 999;
+}
+
+
+/* for home animation */
+
+@media(max-width: 982px){
+    .h1-animation {
+    font-size: 2.5em;
+    }
+    .body {
+    overflow: hidden;
+    background: linear-gradient(#a393d1, #d815ff);
+    font-size: calc(7px + (11 - 9) * ((45vw - 120px) / (700 - 120)));
+    font-family: "DM Mono", monospace;
+    font-weight: 300;
+    height: 99.99vh;
+}
+}
+@media(min-width: 982.1px){
+    .h1-animation {
+     font-size: 3.5em;
+ }
+ .body {
+    overflow: hidden;
+    background: linear-gradient(#16A085, #F4D03F);
+    font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+    font-family: "DM Mono", monospace;
+    font-weight: 300;
+    height: 99.99vh;
+}
+}
+.geo-arrow {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+}
+.main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: relative;
+    /* justify-content: center; */
+    align-items: center;
+}
+.main:after,
+.main:before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 100;
+}
+.main:before {
+    left: 16em;
+    top: 25em;
+    height: 30em;
+    width: 30em;
+    border-radius: 30em;
+    background: linear-gradient(#3800e7, #8a15ff);
+    align-self: flex-end;
+    -webkit-animation: gradient-fade 8s ease-in-out 3s infinite alternate;
+    animation: gradient-fade 8s ease-in-out 3s infinite alternate;
+}
+.main:after {
+    top: 0;
+    left: 30;
+    height: 10em;
+    width: 10em;
+    border-radius: 10em;
+    background: linear-gradient(#3800e7, #8a15ff);
+    -webkit-animation: gradient-fade-alt 6s ease-in-out 3s infinite alternate;
+    animation: gradient-fade-alt 6s ease-in-out 3s infinite alternate;
+}
+.main__text-wrapper {
+    position: relative;
+    padding: 2em;
+}
+.main__text-wrapper:after,
+.main__text-wrapper:before {
+    content: "";
+    display: block;
+    position: absolute;
+}
+.main__text-wrapper:before {
+    z-index: 100;
+    top: 15em;
+    right: 16em;
+    width: 40em;
+    height: 13em;
+    opacity: 0.7;
+    border-radius: 13em;
+    background: linear-gradient(#15e0ff, #8a15ff);
+    -webkit-animation: rotation 7s linear infinite;
+    animation: rotation 7s linear infinite;
+}
+.main__text-wrapper:after {
+    z-index: 100;
+    bottom: -20em;
+    width: 20em;
+    height: 20em;
+    border-radius: 20em;
+    background: linear-gradient(#d000c5, #8a15ff);
+    -webkit-animation: rotation 7s linear infinite;
+    animation: rotation 7s linear infinite;
+}
+
+.arrow {
+    z-index: 1000;
+    opacity: 0.5;
+    position: absolute;
+}
+.arrow--top {
+    top: 0;
+    left: -5em;
+}
+.arrow--bottom {
+    bottom: 0;
+    right: 3em;
+}
+
+.circle {
+    transform: translate(50%, -50%) rotate(0deg);
+    transform-origin: center;
+}
+.circle--ltblue {
+    height: 20em;
+    width: 20em;
+    border-radius: 20em;
+    background: linear-gradient(#15e0ff, #3800e7);
+}
+
+.backdrop {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    background-color: pink;
+}
+
+.dotted-circle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0.3;
+    -webkit-animation: rotation 38s linear infinite;
+    animation: rotation 38s linear infinite;
+}
+
+.draw-in {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 10;
+    -webkit-animation: draw 15s ease-in-out alternate infinite;
+    animation: draw 15s ease-in-out alternate infinite;
+}
+@-webkit-keyframes draw {
+    from {
+        stroke-dashoffset: 1000;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes draw {
+    from {
+        stroke-dashoffset: 1000;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+.item-to {
+    -webkit-animation-duration: 10s;
+    animation-duration: 10s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+}
+
+.bounce-1 {
+    -webkit-animation-name: bounce-1;
+    animation-name: bounce-1;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease;
+}
+
+.bounce-2 {
+    -webkit-animation-name: bounce-2;
+    animation-name: bounce-2;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease;
+}
+
+.bounce-3 {
+    -webkit-animation-name: bounce-3;
+    animation-name: bounce-3;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease;
+}
+@-webkit-keyframes bounce-1 {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(50px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes bounce-1 {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(50px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@-webkit-keyframes bounce-2 {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes bounce-2 {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@-webkit-keyframes bounce-3 {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(30px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes bounce-3 {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(30px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@-webkit-keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes gradient-fade {
+    from {
+        transform: translate(10%, -10%) rotate(0deg);
+    }
+    to {
+        transform: translate(50%, -50%) rotate(360deg);
+    }
+}
+@keyframes gradient-fade {
+    from {
+        transform: translate(10%, -10%) rotate(0deg);
+    }
+    to {
+        transform: translate(50%, -50%) rotate(360deg);
+    }
+}
+@-webkit-keyframes gradient-fade-alt {
+    from {
+        transform: translate(-20%, 20%) rotate(0deg);
+    }
+    to {
+        transform: translate(-60%, 60%) rotate(360deg);
+    }
+}
+@keyframes gradient-fade-alt {
+    from {
+        transform: translate(-20%, 20%) rotate(0deg);
+    }
+    to {
+        transform: translate(-60%, 60%) rotate(360deg);
+    }
+}
+/*responsive mediaquery start*/
+@media(min-width: 1140px) {
+    .about .about-content .left img {
         height: 500px;
         width: 400px;
     }
-    .max-width{
+    .max-width {
         max-width: 1300px;
         padding: 0 80px;
         margin: auto;
     }
-    .about .about-content{
+    .about .about-content {
         grid-template-columns: repeat(2, 45% 55%);
         align-items: center;
         justify-content: space-between;
     }
-    .serv-content{
+    .serv-content {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 30px;
     }
-    .skill-content, .contact-content{
+    .contact-content,
+    .skill-content {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 30px;
-    } 
-    .teams{
+    }
+    .teams {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 30px;
     }
- }
- @media(min-width: 970px){
-    .about .about-content{
+    .home .home-content .text-2 {
+        font-size: 75px;
+        color: hotpink;
+    }
+}
+@media(min-width: 970px) {
+    .about .about-content {
         grid-template-columns: repeat(2, 45% 55%);
         align-items: center;
         justify-content: space-between;
     }
-    .max-width{
+    .max-width {
         max-width: 1400px;
         padding: 0 60px;
         margin: auto;
     }
-    .about .about-content .left img{
+    .about .about-content .left img {
         height: 500px;
         width: 400px;
     }
-    .serv-content{
+    .serv-content {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 30px;
     }
-    .skill-content, .contact-content{
+    .contact-content,
+    .skill-content {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 30px;
     }
- }
- @media(min-width: 500px){
-    .about .about-content{
+    .home .home-content .text-2 {
+        font-size: 75px;
+    }
+}
+@media(min-width: 500px) {
+    .about .about-content {
         grid-template-columns: repeat(1);
         text-align: center;
         justify-content: space-between;
         align-items: center;
 
     }
-    .max-width{
+    .max-width {
         max-width: 1431px;
         padding: 0 50px;
         margin: auto;
     }
-    .about .about-content .left img{
+    .about .about-content .left img {
         height: 450px;
         width: 350px;
     }
-    .serv-content, .skill-content{
+    .serv-content,
+    .skill-content {
         display: grid;
         grid-template-columns: repeat(1);
         grid-gap: 30px;
     }
-    .teams, .contact-content{
+    .contact-content,
+    .teams {
         display: grid;
         grid-template-columns: repeat(1);
         grid-gap: 30px;
     }
- }
+    .home .home-content .text-2 {
+        font-size: 45px;
+    }
+}
 
- /* media query by max width */
- @media(max-width: 1550px){
-    .count .num{
+/* media query by max width */
+@media(max-width: 1550px) {
+    .count .num {
         font-size: 100px;
     }
-    .count .txt{
+    .count .txt {
         font-size: 30px;
     }
-    .count{
+    .count {
         margin: 50px;
     }
 }
- @media(max-width: 1200px){
-    .count .num{
+@media(max-width: 1200px) {
+    .count .num {
         font-size: 40px;
     }
-    .count .txt{
+    .count .txt {
         font-size: 30px;
     }
-    .count{
+    .count {
         margin: 30px;
     }
 }
- @media(max-width: 550px){
-    .count .num{
+@media(max-width: 550px) {
+    .count .num {
         font-size: 40px;
     }
-    .count .txt{
+    .count .txt {
         font-size: 15px;
     }
-    .count{
+    .count {
         margin: 10px;
     }
- }
-/* home section styling */
-.home{
-    display: flex;
-    background: url("images/Man-Made-Road-Background-For-Free-.jpg");
-    height: 100vh;
-    color: #fff;
-    min-height: 500px;
-    font-family: sans-serif;
-}
-.home .max-width{
-    margin: auto 0 auto 40px;
-}
-.home .home-content .text-1{
-    font-size: 27px;
 }
 /* common styling  */
-.about, .serv, .skill, .team, .contact, .footer, .duration-section{
+.about,
+.contact,
+.duration-section,
+.footer,
+.serv,
+.skill,
+.team {
     font-family: sans-serif;
 }
-section{
+section {
     padding: 100px 0;
 }
-section .title{
+section .title {
     position: relative;
     text-align: center;
     font-size: 40px;
     padding-bottom: 20px;
     margin-bottom: 60px;
 }
-section .title::before{
-    position:absolute;
+section .title::before {
+    position: absolute;
     content: "";
     left: 50%;
     bottom: 0;
@@ -216,8 +558,8 @@ section .title::before{
     transform: translateX(-50%);
 
 }
-section .title::after{
-    position:absolute;
+section .title::after {
+    position: absolute;
     padding: 5px;
     left: 50%;
     bottom: -14px;
@@ -227,278 +569,318 @@ section .title::after{
     transform: translateX(-50%);
 
 }
-.home .home-content a, .about .right a, .skill a, .icons a{
+.about .right a,
+.home .home-content a,
+.icons a,
+.skill a {
     background-color: crimson;
     color: #fff;
     padding: 8px 20px;
     border-radius: 5px;
     text-decoration: none;
-    font-size: 26px;   
+    font-size: 26px;
     border: 3px solid crimson;
     transition: all 0.5s ease-in;
 }
-.skill a:hover, .icons a:hover{
+.icons a:hover,
+.skill a:hover {
     text-decoration: none;
     background: none;
     color: crimson;
 }
-.home .home-content a:hover{
-    background: none;
-}
-.about .about-content a:hover{
+.about .about-content a:hover {
     background: none;
     color: crimson;
 }
-.home .home-content .text-2{
-    font-size: 75px;
+.home .home-content .text-2 {
     font-weight: 600px;
 }
-.home .home-content .text-3{
+.home .home-content .text-3 {
     font-size: 40px;
 }
-.home .home-content .text-3 span{
-  color: rgb(255, 7, 57);
-  font-weight: 600;
+.home .home-content .text-3 span {
+    color: rgb(255, 7, 57);
+    font-weight: 600;
 }
 /* duration section styling */
-.duration-text{
+.duration-text {
     font-size: 30px;
     color: #fff;
 }
-.duration-section{
+.duration-section {
     background: #111;
     color: #fff;
     text-align: center;
 }
-.duration{
+.duration {
     display: flex;
     justify-content: center;
 }
-.duration-section .title::after{
+.duration-section .title::after {
     background: #111;
     content: "Mission starts from";
 }
-.duration-section .title::before{
+.duration-section .title::before {
     background: #fff;
 }
-.count{
-    font-weight: 700;    
+.count {
+    font-weight: 700;
 }
-.count .txt{
-    color:rgb(255, 106, 0);
+.count .txt {
+    color: rgb(255, 106, 0);
 }
-.count .num{
+.count .num {
     color: rgb(255, 0, 255);
 }
 /* about section styling */
-.about .about-content{
+.about .about-content {
     display: grid;
 }
-.about .title::after{
+.about .title::after {
     background: #fff;
     content: "Who i am";
 }
 
-.about .about-content .left img{
+.about .about-content .left img {
     /* border: 2px solid crimson; */
     /* background: linear-gradient(45deg, grey, rgb(196, 190, 190)); */
-    background:radial-gradient(rgb(150, 150, 150), rgb(17, 224, 231));
+    background: radial-gradient(rgb(238, 220, 186), tomato);
     border-radius: 2%;
     object-fit: cover;
 }
-.about .about-content .right p{
+.about .about-content .right p {
     text-align: justify;
 }
-.about .about-content .right .text{
+.about .about-content .right .text {
     font-size: 25px;
     font-weight: 600;
 }
 /* service section start */
-.serv .title::after{
+.project-name{
+    color: yellow;
+}
+.serv .serv-content .project:hover .project-name{
+   color: orange;
+}
+.project-btn{
+    background: blue;
+    border-radius: 4px;
+    padding: 5px 12px;
+    border: none;
+}
+.project-btn:hover{
+    background: blue;
+}
+.serv .serv-title::after {
     background: #111;
     content: "What i provide";
 }
-.serv .title::before{
+.serv .project-title::after {
+    background: #111;
+    content: "What i done";
+}
+.serv .title::before {
     background: #fff;
 }
-.serv, .team{
+.serv,
+.team {
     background: #111;
     color: #fff;
 }
-.serv .serv-content .card{
-    background: #444;
+/* proect and service background */
+.serv .serv-content .card:hover {
+    transform: scale(1.05);
+}
+.serv .serv-content .card:hover{
+    background: rgb(70, 3, 253);
+}
+.serv .serv-content .project:hover{
+    background: rgb(255, 255, 255);
+}
+.serv .serv-content .card {
     text-align: center;
     border-radius: 6px;
     padding: 45px 25px;
     cursor: pointer;
     transition: all 0.5s ease;
 }
-.serv .serv-content .card i{
+.serv .serv-content .card{
+    background: rgba(110, 83, 184, 0.871);
+}
+.serv .serv-content .project{
+    background: rgba(152, 152, 153, 0.871);
+}
+
+
+
+.serv .serv-content .card i {
     font-size: 50px;
     color: crimson;
 }
-.serv .serv-content .card .text{
+.serv .serv-content .card .text {
     font-size: 25px;
     font-weight: 500;
-    margin: 10px 0 7px 0;
-}
-.serv .serv-content .card:hover{
-    background: crimson;
-    transform: scale(1.05);
+    margin: 10px 0 7px;
 }
 
-.serv .serv-content .card:hover i{
+.serv .serv-content .card:hover i {
     color: #fff;
     transition: color 0.5s ease;
 }
 /* skill section styling */
-.skill .title::after{
+.skill .title::after {
     content: "What i know";
 }
-.skill .skill-content .info{
+.skill .skill-content .info {
     display: flex;
-   justify-content: space-between;
-   align-items: center;
-   margin-bottom: 10px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
 }
-.skill .skill-content .text{
-   font-size: 25px;
-   font-weight: 600;
-   margin-bottom: 10px;
+.skill .skill-content .text {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
-.skill .skill-content .right span{
+.skill .skill-content .right span {
     font-size: 18px;
     font-weight: 600;
 }
-.skill .skill-content .right .line{
+.skill .skill-content .right .line {
     height: 10px;
     width: 100%;
     background: lightgray;
     position: relative;
 }
-.skill .skill-content .right .line::before{
-    position:absolute;
+.skill .skill-content .right .line::before {
+    position: absolute;
     height: 100%;
     content: "";
     background: rgb(221, 255, 1);
 }
-.skill .skill-content .right .html::before{
+.skill .skill-content .right .html::before {
     width: 90%;
 }
-.skill .skill-content .right .css::before{
+.skill .skill-content .right .css::before {
     width: 80%;
 }
-.skill .skill-content .right .bootstrap::before{
+.skill .skill-content .right .bootstrap::before {
     width: 85%;
 }
-.skill .skill-content .right .js::before{
+.skill .skill-content .right .js::before {
     width: 70%;
 }
-.skill .skill-content .right .react::before{
+.skill .skill-content .right .react::before {
     width: 75%;
 }
-.skill .skill-content .left p{
+.skill .skill-content .left p {
     text-align: justify;
 }
 /* teams section stylung*/
-.team .title::after{
+.team .title::after {
     content: "Who with me";
 }
-.team .title::after{
-   background: #111;
+.team .title::after {
+    background: #111;
 }
-.team .title::before{
+.team .title::before {
     background: #fff;
 }
-.team .team-content .card img{
+.team .team-content .card img {
     border: 3px solid crimson;
     border-radius: 50%;
     object-fit: cover;
     height: 300px;
     width: 250px;
 }
-.team .team-content .card:hover img{
+.team .team-content .card:hover img {
     transform: scale(1.05);
     transition: all 0.7s;
 }
 .team .team-content .card {
-    background: #444;
+    background: rgb(167, 74, 92);
     padding: 20px;
     border-radius: 6px;
     text-align: center;
-    transition: all 0.9s ease-in-out;
+    transition: all 0.9s ease-in-out
 }
-.team .team-content .card:hover{
+.team .team-content .card:hover {
     background: crimson;
-    transition: all 0.8s;
+    transition: all 0.8s ease-in-out;
 }
-.team .team-content .card:hover img{
+.team .team-content .card:hover img {
     border-color: yellow;
 }
-.team .team-content .card:hover .box{
+.team .team-content .card:hover .box {
     transform: scale(1.05);
 }
 /* contact section styling */
-.contact .title::after{
+.contact .title::after {
     content: "Get in touch";
 }
-.contact .contact-content .row{
+.contact .contact-content .row {
     display: flex;
     align-items: center;
 }
-.contact .contact-content .row .head{
+.contact .contact-content .row .head {
     font-weight: 600;
 }
-.contact .contact-content .row{
+.contact .contact-content .row {
     margin-top: 20px;
 }
-.contact .contact-content .row i{
+.contact .contact-content .row i {
     margin-right: 20px;
     font-size: 29px;
     color: crimson;
 }
-.contact .contact-content .text{
+::placeholder{
+    padding-left: 10px;
+    color: darkgray;
+    font-size: 14px;
+    font-family:cursive;
+}
+.contact .contact-content .text {
     font-size: 20px;
     font-weight: 600;
     padding-bottom: 10px;
 }
-.contact .contact-content .left p{
+.contact .contact-content .left p {
     text-align: justify;
 }
-.contact .contact-content .name{
+.contact .contact-content .name {
     width: 49%;
     height: 35px;
     background: blanchedalmond;
     border-radius: 3px;
 }
-.contact .contact-content .subject{
+.contact .contact-content .subject {
     width: 99%;
     height: 40px;
     background: blanchedalmond;
     border-radius: 3px;
 
 }
-.contact .contact-content .description{
+.contact .contact-content .description {
     width: 99%;
     height: 80px;
     background: blanchedalmond;
     border-radius: 3px;
-
 }
+
 /* footer section styling */
-.footer{
+.footer {
     background: #111;
     text-align: center;
 }
-.footer span{
+.footer span {
     color: #fff;
 }
-.footer a{
+.footer a {
     color: crimson;
 }
-.footer a:hover{
+.footer a:hover {
     text-decoration: underline;
 }
-.contact .column ::placeholder{
-   padding: 10px;
+.contact .column::placeholder {
+    padding: 10px;
 }
