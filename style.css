@@ -492,6 +492,39 @@
         font-size: 45px;
     }
 }
+@media(min-width: 100px) {
+    .about .about-content {
+        grid-template-columns: repeat(1);
+        text-align: center;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+    .max-width {
+        max-width: 1431px;
+        padding: 0 20px;
+        margin: auto;
+    }
+    .about .about-content .left img {
+        height: 450px;
+        width: 350px;
+    }
+    .serv-content,
+    .skill-content {
+        display: grid;
+        grid-template-columns: repeat(1);
+        grid-gap: 20px;
+    }
+    .contact-content,
+    .teams {
+        display: grid;
+        grid-template-columns: repeat(1);
+        grid-gap: 20px;
+    }
+    .home .home-content .text-2 {
+        font-size: 45px;
+    }
+}
 
 /* media query by max width */
 @media(max-width: 1550px) {
