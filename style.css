@@ -57,7 +57,6 @@
 /* for text-animation */
 .text-animation-body {
   font-family: "Raleway", sans-serif;
-  /* padding: 1em 2em; */
   font-size: 18px;
   color: #aaa;
 }
@@ -94,8 +93,8 @@
     font-size: calc(7px + (11 - 9) * ((45vw - 120px) / (700 - 120)));
     font-family: "DM Mono", monospace;
     font-weight: 300;
-    height: 99.99vh;
-}
+    height: 65.99vh;
+   }
 }
 @media(min-width: 982.1px){
     .h1-animation {
@@ -122,7 +121,6 @@
     flex-direction: column;
     flex-wrap: wrap;
     position: relative;
-    /* justify-content: center; */
     align-items: center;
 }
 .main:after,
@@ -424,14 +422,10 @@
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 30px;
     }
-    .home .home-content .text-2 {
-        font-size: 75px;
-        color: hotpink;
-    }
 }
 @media(min-width: 970px) {
     .about .about-content {
-        grid-template-columns: repeat(2, 45% 55%);
+        grid-template-columns: repeat(1);
         align-items: center;
         justify-content: space-between;
     }
@@ -454,9 +448,6 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 30px;
-    }
-    .home .home-content .text-2 {
-        font-size: 75px;
     }
 }
 @media(min-width: 500px) {
@@ -488,9 +479,6 @@
         grid-template-columns: repeat(1);
         grid-gap: 30px;
     }
-    .home .home-content .text-2 {
-        font-size: 45px;
-    }
 }
 @media(min-width: 100px) {
     .about .about-content {
@@ -502,7 +490,7 @@
     }
     .max-width {
         max-width: 1431px;
-        padding: 0 20px;
+        padding: 0 0px;
         margin: auto;
     }
     .about .about-content .left img {
@@ -520,9 +508,6 @@
         display: grid;
         grid-template-columns: repeat(1);
         grid-gap: 20px;
-    }
-    .home .home-content .text-2 {
-        font-size: 45px;
     }
 }
 
@@ -741,7 +726,7 @@ section .title::after {
     background: rgba(110, 83, 184, 0.871);
 }
 .serv .serv-content .project{
-    background: rgba(152, 152, 153, 0.871);
+    background: rgba(233, 231, 231, 0.871);
 }
 
 
