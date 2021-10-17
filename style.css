@@ -675,36 +675,39 @@ section .title::after {
     font-weight: 600;
 }
 /* service section start */
+
 .project-name{
-    color: yellow;
-}
-.serv .serv-content .project:hover .project-name{
    color: orange;
 }
 .project-btn{
-    background: blue;
+    background: rgb(105, 105, 179);
     border-radius: 4px;
     padding: 5px 12px;
     border: none;
+    color: white;
+    text-decoration: none;
 }
 .project-btn:hover{
     background: blue;
+    color: white;
 }
 .serv .serv-title::after {
-    background: #111;
+    background: antiquewhite;
     content: "What i provide";
 }
 .serv .project-title::after {
-    background: #111;
+    background: antiquewhite;
     content: "What i done";
 }
 .serv .title::before {
     background: #fff;
 }
-.serv,
 .team {
     background: #111;
     color: #fff;
+}
+.serv{
+    background:antiquewhite;
 }
 /* proect and service background */
 .serv .serv-content .card:hover {
@@ -713,9 +716,9 @@ section .title::after {
 .serv .serv-content .card:hover{
     background: rgb(70, 3, 253);
 }
-.serv .serv-content .project:hover{
+/* .serv .serv-content .project:hover{
     background: rgb(255, 255, 255);
-}
+} */
 .serv .serv-content .card {
     text-align: center;
     border-radius: 6px;
@@ -727,11 +730,18 @@ section .title::after {
     background: rgba(110, 83, 184, 0.871);
 }
 .serv .serv-content .project{
-    background: rgba(233, 231, 231, 0.871);
+    background: linear-gradient(#ffffff, #66ff00);
+    text-align: center;
+    border-radius: 6px;
+    padding: 45px 25px;
+    cursor: pointer;
+    transition: all 0.5s ease;
 }
-
-
-
+.serv .serv-content .project:hover{
+   transform: translateY(-15px);
+   cursor: pointer;
+   transition: all 0.5s ease;
+}
 .serv .serv-content .card i {
     font-size: 50px;
     color: crimson;
