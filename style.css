@@ -10,7 +10,7 @@
     width: 100%;
     background: blanchedalmond;
     padding: 5px 0;
-    z-index: 999;
+    z-index: 1200;
 }
 .menu-btn {
     color: #fff;
@@ -85,7 +85,7 @@
 
 @media(max-width: 982px){
     .h1-animation {
-    font-size: 2.5em;
+    font-size: 2.2em;
     }
     .body {
     overflow: hidden;
@@ -95,6 +95,7 @@
     font-weight: 300;
     height: 65.99vh;
    }
+   
 }
 @media(min-width: 982.1px){
     .h1-animation {
