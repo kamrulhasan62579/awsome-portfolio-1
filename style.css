@@ -391,6 +391,78 @@
         transform: translate(-60%, 60%) rotate(360deg);
     }
 }
+/* for onload animation or initial animation */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+}
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+}
+  to {
+    transform: translateX(0);
+  }
+}
+.about .about-content .left{
+    animation: 1s ease-in 0s 1  slideInFromLeft;
+    -webkit-animation: 1s ease-in 0s 1  slideInFromLeft;
+}
+.about .about-content .right{
+     animation: 1s ease-out 0s 1  slideInFromRight;
+     -webkit-animation: 1s ease-out 0s 1  slideInFromRight;
+}
+.about{
+    overflow: hidden;
+}
+@keyframes slideInFromUp {
+  0% {
+    transform: translateY(-100%);
+}
+  100% {
+    transform: translateY(0);
+ }
+}
+@keyframes slideInFromDown {
+  from {
+    transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    -o-transform: translateY(100%);
+}
+  to {
+    transform: translateY(0);
+ }
+}
+.serv .serv-content .card{
+    animation: 1s ease-in 0s 1  slideInFromUp;
+    -webkit-animation: 1s ease-in 0s 1  slideInFromUp;
+}
+.serv{
+    overflow: hidden;
+}
+.serv .serv-content .project{
+    animation: 1s ease-in 0s 1  slideInFromDown;
+    -webkit-animation: 1s ease-in 0s 1  slideInFromDown;
+}
+
+.team .team-content .card{
+    animation: 1s ease-in 0s 1  slideInFromUp;
+    -webkit-animation: 1s ease-in 0s 1  slideInFromUp;
+}
+
+.team{
+    overflow: hidden;
+}
+
+
+
+
 /*responsive mediaquery start*/
 @media(min-width: 1140px) {
     .about .about-content .left img {
